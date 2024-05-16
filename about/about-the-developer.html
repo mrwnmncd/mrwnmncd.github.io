@@ -4,12 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>FAQ - Polaroid Love</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <title>Contacts - Polaroid Love</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono&amp;display=swap">
-    <link rel="stylesheet" href="assets/css/Bootstrap-Payment-Form.css">
-    <link rel="stylesheet" href="assets/css/Features-Cards-icons.css">
+    <link rel="stylesheet" href="../assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../assets/css/Bootstrap-Payment-Form.css">
+    <link rel="stylesheet" href="../assets/css/Features-Cards-icons.css">
 </head>
 
 <body>
@@ -21,27 +22,29 @@
                     <li class="nav-item"><a class="nav-link" href="../cameras/QuickSnap-Flash-400.html">Cameras</a></li>
                     <li class="nav-item"><a class="nav-link" href="../cart.html">Cart</a></li>
                     <li class="nav-item"><a class="nav-link" href="../contacts.html">Contacts</a></li>
-                </ul>
-            </div>
+                </ul><button class="btn btn-sm mx-auto" id="audio-control" type="button"><i class="icon ion-ios-play" id="audio-control-icon"></i></button>
+            </div><audio id="audio-player" autoplay="" loop="" preload="auto">
+                <source src="https://bucketba576.s3.ap-southeast-1.amazonaws.com/polaroid+love.mp3" type="audio/mpeg">
+            </audio>
         </div>
     </nav>
-    <section class="py-5 py-xl-5 mb-5 my-5">
+    <section class="py-5 mt-5 py-xl-5 mb-5">
         <div class="container">
             <div class="row mb-2">
-                <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <div class="col-md-8 col-xl-8 text-center mx-auto">
                     <h2 class="display-6 fw-bold mb-5"><span class="pb-3 underline">Web Design Principles</span></h2>
                     <p class="text-muted mb-5">More than its face value, appreciate how this website came into being.</p>
                 </div>
             </div>
             <div class="row mb-2">
                 <div class="col-md-8 mx-auto">
-                    <div class="accordion text-muted" role="tablist" id="accordion-2">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-2 .item-1" aria-expanded="false" aria-controls="accordion-2 .item-1">About the Developer</button></h2>
-                            <div class="accordion-collapse collapse item-1" role="tabpanel" data-bs-parent="#accordion-2">
+                    <div class="accordion text-muted" role="tablist" id="accordion-1">
+                        <div class="accordion-item" id="about-the-developer">
+                            <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-1" aria-expanded="false" aria-controls="accordion-1 .item-1">About the Developer</button></h2>
+                            <div class="accordion-collapse collapse item-1" role="tabpanel" data-bs-parent="#accordion-1">
                                 <div class="accordion-body">
                                     <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-12 col-xl-12 col-xxl-12">
                                             <div class="card">
                                                 <div class="card-body p-4">
                                                     <div class="row">
@@ -65,8 +68,8 @@
                             </div>
                         </div>
                         <div class="accordion-item">
-                            <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-2 .item-2" aria-expanded="false" aria-controls="accordion-2 .item-2">About the Development</button></h2>
-                            <div class="accordion-collapse collapse item-2" role="tabpanel" data-bs-parent="#accordion-2">
+                            <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-2" aria-expanded="false" aria-controls="accordion-1 .item-2">About the Development</button></h2>
+                            <div class="accordion-collapse collapse item-2" role="tabpanel" data-bs-parent="#accordion-1">
                                 <div class="accordion-body">
                                     <p class="mb-0">The development of this website considers those already available resources at hand. Taking advantage of the open-source community, this site was designed to maximize the use of frameworks and libraries and allow to build more content.</p>
                                     <p class="mb-0">There was an extensive effort and thinking that was put in this work especially in JavaScript. It took years of hard work and self-study to be able to build a dynamic website like this one.</p>
@@ -74,8 +77,8 @@
                             </div>
                         </div>
                         <div class="accordion-item">
-                            <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-2 .item-3" aria-expanded="false" aria-controls="accordion-2 .item-3">Inspiration and Dedication</button></h2>
-                            <div class="accordion-collapse collapse item-3" role="tabpanel" data-bs-parent="#accordion-2">
+                            <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-3" aria-expanded="false" aria-controls="accordion-1 .item-3">Inspiration and Dedication</button></h2>
+                            <div class="accordion-collapse collapse item-3" role="tabpanel" data-bs-parent="#accordion-1">
                                 <div class="accordion-body">
                                     <p class="mb-0">This website was built with passion inspired by someone truly capture-worthy.</p>
                                     <p class="mb-0">This work of art is dedicated to their shared achievements together and to more that they will achieve. This reflects their love in what they do and the capabilities they have to transform and materialize their capabilities together.</p>
@@ -128,10 +131,10 @@
             </div>
         </div>
     </footer>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/cart-utility.js"></script>
-    <script src="assets/js/music.js"></script>
-    <script src="assets/js/startup-modern.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/cart-utility.js"></script>
+    <script src="../assets/js/music.js"></script>
+    <script src="../assets/js/startup-modern.js"></script>
 </body>
 
 </html>

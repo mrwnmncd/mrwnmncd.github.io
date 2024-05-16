@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono&amp;display=swap">
-    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Bootstrap-Payment-Form.css">
     <link rel="stylesheet" href="assets/css/Features-Cards-icons.css">
 </head>
 
@@ -18,13 +19,11 @@
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="cameras/QuickSnap-Flash-400.html">Cameras</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../cameras/QuickSnap-Flash-400.html">Cameras</a></li>
                     <li class="nav-item"><a class="nav-link" href="../cart.html">Cart</a></li>
                     <li class="nav-item"><a class="nav-link" href="../contacts.html">Contacts</a></li>
-                </ul><button class="btn btn-sm mx-auto" id="audio-control" type="button"><i class="icon ion-ios-play" id="audio-control-icon"></i></button>
-            </div><audio id="audio-player" autoplay="" loop="" preload="auto">
-                <source src="https://bucketba576.s3.ap-southeast-1.amazonaws.com/polaroid+love.mp3" type="audio/mpeg">
-            </audio>
+                </ul>
+            </div>
         </div>
     </nav>
     <section class="py-5 mt-5">
@@ -42,7 +41,7 @@
                             <div>
                                 <h6 class="fw-bold text-muted">Review Cart</h6>
                                 <h4 class="display-5 fw-bold mb-4"><strong>Ready? Say Checkout!</strong></h4>
-                                <div class="table-responsive">
+                                <div class="table-responsive" id="cart-table">
                                     <table class="table">
                                         <thead>
                                             <tr>
@@ -56,12 +55,21 @@
                                 </div>
                                 <p id="cart-lbl-prompter" style="text-align: center;">We are checking your cart.</p>
                             </div>
+                            <div><button class="btn btn-sm d-xl-flex justify-content-between align-items-center justify-content-xl-start" id="cart-btn-clear-cart" type="reset"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-shopping-cart-off justify-content-between">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                                        <path d="M17 17a2 2 0 1 0 2 2"></path>
+                                        <path d="M17 17h-11v-11"></path>
+                                        <path d="M9.239 5.231l10.761 .769l-1 7h-2m-4 0h-7"></path>
+                                        <path d="M3 3l18 18"></path>
+                                    </svg>&nbsp;Clear Cart</button></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-3 col-xxl-3">
                     <div class="card border-0 h-100">
                         <div class="card-body d-flex flex-column justify-content-between p-4">
+                            <h6 class="fw-bold text-muted card-subtitle mb-3">Checkout</h6>
                             <div>
                                 <div>
                                     <h6><strong>Subtotal</strong></h6>
@@ -96,21 +104,72 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div><a class="btn btn-primary" role="button" href="#">Checkout</a>
+                            </div><button class="btn btn-primary" id="checkout-btn-checkout" data-bs-toggle="modal" data-bs-target="#checkout-modal-payment">Checkout</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <section class="py-4 py-xl-5">
-        <div class="container">
-            <div class="text-white bg-primary border rounded border-0 border-primary d-flex flex-column justify-content-between flex-lg-row p-4 p-md-5">
-                <div class="pb-2 pb-lg-1">
-                    <h2 class="fw-bold text-warning mb-2">Not sure which plan suits you?</h2>
-                    <p class="mb-0">Imperdiet consectetur dolor, tristique himenaeos ultrices tristique neque.</p>
+        <div class="modal fade" role="dialog" tabindex="-1" id="checkout-modal-payment">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Checkout</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>It's really a polaroid love!</p>
+                        <div class="row payment-dialog-row">
+                            <div class="col">
+                                <div class="card border-0 h-100">
+                                    <div class="card-body d-flex flex-column justify-content-between p-4">
+                                        <div>
+                                            <div>
+                                                <div>
+                                                    <h6><strong>Your due is&nbsp;</strong><span id="checkout-modal-lbl-total" style="font-family: 'Roboto Mono', monospace;">0.00</span></h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4 col-xl-12 offset-md-4 offset-xl-0">
+                                <div class="card credit-card-box">
+                                    <div class="card-header">
+                                        <h3><span class="panel-title-text">Payment Details </span><img class="img-fluid panel-title-image" src="assets/img/accepted_cards.png"></h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <form id="payment-form">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group mb-3"><label class="form-label" for="cardNumber">Card number </label>
+                                                        <div class="input-group"><input class="form-control" type="tel" id="cardNumber" required="" placeholder="Valid Card Number"><span class="input-group-text"><i class="fa fa-credit-card"></i></span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-7">
+                                                    <div class="form-group mb-3"><label class="form-label" for="cardExpiry"><span>expiration </span><span>EXP </span> date</label><input class="form-control" type="tel" id="cardExpiry" required="" placeholder="MM / YY"></div>
+                                                </div>
+                                                <div class="col-5 pull-right">
+                                                    <div class="form-group mb-3"><label class="form-label" for="cardCVC">cv code</label><input class="form-control" type="tel" id="cardCVC" required="" placeholder="CVC"></div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group mb-3"><label class="form-label" for="couponCode">coupon code</label><input class="form-control" type="text" id="couponCode"></div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12"><button class="btn btn-primary w-100 btn-lg" id="checkout-modal-btn-place-order" data-bs-toggle="modal" data-bs-target="#checkout-modal-payment">Place Order</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button></div>
                 </div>
-                <div class="my-2"><a class="btn btn-light fs-5 py-2 px-4" role="button" href="contacts.html">Contact us</a></div>
             </div>
         </div>
     </section>
@@ -125,16 +184,16 @@
                 <div class="col-sm-4 col-md-3 text-lg-start d-flex flex-column">
                     <h3 class="fs-6 fw-bold">Shop</h3>
                     <ul class="list-unstyled">
-                        <li><a href="cameras/QuickSnap-Flash-400.html">QuickSnap Flash 400</a></li>
-                        <li><a href="cameras/QuickSnap-Waterproof.html">QuickSnap Waterproof</a></li>
+                        <li><a href="../cameras/QuickSnap-Flash-400.html">QuickSnap Flash 400</a></li>
+                        <li><a href="../cameras/QuickSnap-Waterproof.html">QuickSnap Waterproof</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-4 col-md-3 text-lg-start d-flex flex-column">
                     <h3 class="fs-6 fw-bold">About</h3>
                     <ul class="list-unstyled">
-                        <li><a href="contacts.html#about-the-developer">About the Developer</a></li>
+                        <li><a href="../contacts.html#about-the-developer">About the Developer</a></li>
                         <li><a href="about-the-site.html">About the Site</a></li>
-                        <li><a href="contacts.html">Contact Us</a></li>
+                        <li><a href="../contacts.html">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -157,6 +216,7 @@
     </footer>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/cart-utility.js"></script>
+    <script src="assets/js/checkout.js"></script>
     <script src="assets/js/load-cart.js"></script>
     <script src="assets/js/music.js"></script>
     <script src="assets/js/startup-modern.js"></script>

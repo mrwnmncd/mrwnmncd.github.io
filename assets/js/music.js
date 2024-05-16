@@ -2,6 +2,7 @@
   const player = document.getElementById("audio-player");
   const playButton = document.getElementById("audio-control");
   const btnIcon = document.getElementById("audio-control-icon");
+ try {
 
   setCurrentTime();
   window.onload = setInterval(autoplay, 1000 / 10); //10fps
@@ -36,4 +37,8 @@
   function setCurrentTime() {
     player.currentTime = parseFloat(sessionStorage.getItem("engeneplay") || 0);
   }
+ } catch (error) {
+  document.removeChild(player);
+  document.removeChild(playButton);
+ }
 })();
