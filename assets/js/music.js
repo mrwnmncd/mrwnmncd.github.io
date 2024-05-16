@@ -38,6 +38,7 @@
     player.currentTime = parseFloat(sessionStorage.getItem("engeneplay") || 0);
   }
  } catch (error) {
+  console.error(error);
   document.removeChild(player);
   document.removeChild(playButton);
  }
