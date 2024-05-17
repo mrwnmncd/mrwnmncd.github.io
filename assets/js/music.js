@@ -25,7 +25,7 @@
     sessionStorage.setItem("engeneplay", player.currentTime);
     if (player.paused && sessionStorage.getItem("user-controlled") === "true")
       return;
-
+    btnIcon.classList.replace("ion-ios-play", "ion-ios-pause");
     player.play();
 
     if (player.paused) {
@@ -35,7 +35,7 @@
   }
 
   function setCurrentTime() {
-    player.currentTime = parseFloat(sessionStorage.getItem("engeneplay") || 0);
+    player.currentTime = parseFloat(sessionStorage.getItem("engeneplay") || 0) || 0;
   }
  } catch (error) {
   console.error(error);

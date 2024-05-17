@@ -9,22 +9,25 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono&amp;display=swap">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="../assets/css/Bootstrap-Payment-Form.css">
     <link rel="stylesheet" href="../assets/css/Features-Cards-icons.css">
+    <link rel="stylesheet" href="../assets/css/Hero-Clean-images.css">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-md fixed-top navbar-shrink py-3 navbar-light" id="mainNav">
-        <div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><span>Polaroid Love</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><span>Polaroid Love</span></a><button class="btn btn-sm mx-auto" id="audio-control" type="button"><i class="icon ion-ios-play fs-6" id="audio-control-icon"></i></button><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="QuickSnap-Flash-400.html">Cameras</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../integrations.html">Integrations</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../cart.html">Pricing</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../contacts.html">Contacts</a></li>
-                </ul><a class="btn btn-primary shadow" role="button" href="../signup.html">Sign up</a>
-            </div>
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../cameras/QuickSnap-Flash-400.html">Cameras</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../cart.html">Cart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about/about-the-developer.html">About</a></li>
+                </ul>
+            </div><audio id="audio-player" autoplay="" loop="" preload="auto">
+                <source src="https://bucketba576.s3.ap-southeast-1.amazonaws.com/polaroid+love.mp3" type="audio/mpeg">
+            </audio>
         </div>
     </nav>
     <section class="py-5 mt-5">
@@ -50,7 +53,7 @@
                 </div>
             </div>
             <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
-                <div class="col-lg-12 col-xl-8 col-xxl-9">
+                <div class="col-lg-9 col-xl-8 col-xxl-9">
                     <div class="card border-light border-1 d-flex justify-content-center p-4">
                         <div class="card-body">
                             <div>
@@ -99,7 +102,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12 col-xxl-3 d-flex justify-content-between flex-xl-column">
+                <div class="col-lg-3 col-xxl-3 d-flex justify-content-between flex-xl-column">
                     <div class="card border-light border-1 d-flex flex-grow-1 justify-content-center p-2">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center justify-content-xxl-center mb-xl-5">
@@ -110,6 +113,27 @@
                             </div>
                             <div class="text-center d-flex justify-content-between align-items-center justify-content-xxl-center align-items-xxl-center" style="text-align: center;"><button class="btn btn-primary border rounded-pill d-flex justify-content-between align-items-center" id="product-camera-btn-add-to-cart" type="button"><i class="fa fa-cart-plus"></i>&nbsp;Add to Cart&nbsp;</button></div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container py-4 py-xl-5">
+            <div class="row gy-4 gy-md-0">
+                <div class="col-md-6">
+                    <div class="p-xl-5 m-xl-5"><img class="rounded img-fluid w-100 fit-cover" style="min-height: 200px; min-width: 300px" src="../assets/img/camera/42345.png"></div>
+                </div>
+                <div class="col-md-6 d-md-flex align-items-md-center">
+                    <div style="max-width: 350px;">
+                        <h2 class="text-uppercase fw-bold"><strong>QuickSnap Flash 400</strong></h2>
+                        <p class="my-3"><span style="color: rgb(0, 0, 0);">Take very sharp pictures with a built in flash with a 10ft flash range. Great for taking pictures indoors or outdoors.</span></p>
+                        <div><a class="d-lg-flex justify-content-between align-items-center" href="cameras/QuickSnap-Flash-400.html"><span>Learn more</span>
+                                <p></p><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-arrow-narrow-right fs-3 d-lg-flex justify-content-lg-end align-items-lg-center">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M5 12l14 0"></path>
+                                    <path d="M15 16l4 -4"></path>
+                                    <path d="M15 8l4 4"></path>
+                                </svg>
+                            </a></div>
                     </div>
                 </div>
             </div>
